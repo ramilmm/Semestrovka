@@ -1,88 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-<modelVersion>4.0.0</modelVersion>
-<groupId>BookStore</groupId>
-<artifactId>BookStore</artifactId>
-<packaging>war</packaging>
-<version>1.0-SNAPSHOT</version>
-<name>BookStore</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.springapp</groupId>
+    <artifactId>SpringProject</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>public</module>
+        <module>core</module>
+    </modules>
+    <name>SpringProject</name>
 
-<properties>
-    <spring.version>4.1.1.RELEASE</spring.version>
-</properties>
+    <profiles>
+        <profile>
+            <id>env-ramil-dev</id>
+            <properties>
+                <tomcatHost>localhost</tomcatHost>
+                <tomcatPort>8081</tomcatPort>
+                <tomcatManagerUser>tomcat</tomcatManagerUser>
+                <tomcatManagerPassword>1</tomcatManagerPassword>
+            </properties>
+        </profile>
+        <profile>
+            <id>build-war1</id>
+            <modules>
+                <module>public</module>
+            </modules>
+        </profile>
+    </profiles>
 
-<dependencies>
-    <!-- Spring -->
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-core</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context-support</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
+    <properties>
+        <spring.version>4.2.4.RELEASE</spring.version>
+        <hibernate.version>4.3.6.Final</hibernate.version>
+        <jackson.version>2.2.3</jackson.version>
+        <aspectj.version>1.8.2</aspectj.version>
+    </properties>
 
-    <!-- Servlet -->
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>2.5</version>
-    </dependency>
+    <dependencies>
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 
-    <!-- FreeMarker -->
-    <dependency>
-        <groupId>org.freemarker</groupId>
-        <artifactId>freemarker</artifactId>
-        <version>2.3.20</version>
-    </dependency>
+        <!-- Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+    </dependencies>
 
-    <!-- Test -->
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-test</artifactId>
-        <version>${spring.version}</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.11</version>
-        <scope>test</scope>
-    </dependency>
-
-</dependencies>
-
-<build>
-    <finalName>SpringProject</finalName>
-    <plugins>
-        <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>1.6</source>
-                <target>1.6</target>
-            </configuration>
-        </plugin>
-        <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-                <includes>
-                    <include>**/*Tests.java</include>
-                </includes>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
+    <build>
+        <finalName>SpringProject</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
