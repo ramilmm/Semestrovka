@@ -16,11 +16,6 @@ public class MenuInfo {
     private String name;
 
     /**
-     * Ссылка на соответствующий раздел
-     */
-    private String link;
-
-    /**
      * Список категорий для отображения
      */
     private List<CategoryInfo> listCategory;
@@ -28,10 +23,9 @@ public class MenuInfo {
     public MenuInfo() {
     }
 
-    public MenuInfo(Long id, String name, String link, List<CategoryInfo> listCategory) {
+    public MenuInfo(Long id, String name, List<CategoryInfo> listCategory) {
         this.id = id;
         this.name = name;
-        this.link = link;
         this.listCategory = listCategory;
     }
 
@@ -49,14 +43,6 @@ public class MenuInfo {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
     }
 
     public List<CategoryInfo> getListCategory() {

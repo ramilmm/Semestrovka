@@ -1,9 +1,8 @@
 package com.springapp.mvc.form;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class RegistrationFormBean {
@@ -15,15 +14,14 @@ public class RegistrationFormBean {
     private String lastName;
 
     @NotEmpty(message = "Поле обязательно для заполнения")
-    @Pattern(regexp="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",
-            message="Неверный формат email")
+    @Email
     private String email;
 
     @Size(min = 3, max = 13, message = "Введите верный номер телефона")
     private String phone;
 
-    @AssertTrue(message = "Примите условия договора")
-    private Boolean signIn;
+//    @AssertTrue(message = "Примите условия договора")
+//    private Boolean signIn;
 
     @Size(min=6, max=20, message="Пароль должен быть от 6 до 20 символов")
     private String password;
@@ -34,12 +32,12 @@ public class RegistrationFormBean {
     public RegistrationFormBean() {
     }
 
-    public RegistrationFormBean(String firstName, String lastName, String email, String phone, Boolean signIn, String password, String confirmPassword) {
+
+    public RegistrationFormBean(String firstName, String lastName, String email, String phone, String password, String confirmPassword) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.signIn = signIn;
         this.password = password;
         this.confirmPassword = confirmPassword;
     }
@@ -76,14 +74,6 @@ public class RegistrationFormBean {
         this.phone = phone;
     }
 
-    public Boolean getSignIn() {
-        return signIn;
-    }
-
-    public void setSignIn(Boolean signIn) {
-        this.signIn = signIn;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -107,7 +97,6 @@ public class RegistrationFormBean {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", signIn=" + signIn +
                 ", password='" + password + '\'' +
                 ", confirmPassword='" + confirmPassword + '\'' +
                 '}';

@@ -37,8 +37,9 @@ public class CartInfo{
      * @param goodId id товара
      */
     public boolean containsGoodId(Long goodId){
+        boolean res = false;
         if (goods == null || goodId == null)
-            return false;
+            return res;
         return goods.containsKey(goodId);
     }
 }

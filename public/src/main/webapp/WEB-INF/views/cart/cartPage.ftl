@@ -1,7 +1,8 @@
+<#-- @ftlvariable name="Session.cart" type="mvc.common.CartInfo" -->
 <#include "../template/template.ftl">
-<@mainTemplate title="Cart" styles=["css/cart.css"]/>
+<@mainTemplate title="Cart" styles=["css/own/cart.css"] scripts=["js/own/order.js","js/own/ajax.js"]/>
 <#macro m_body>
-<#include "../template/components/headerCategoryList.ftl" />
+<#--<#include "../template/components/headerCategoryList.ftl" />-->
 <div class="main">
     <div class="shopping-list">
         <div class="container">

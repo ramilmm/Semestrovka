@@ -21,9 +21,12 @@
 
     <script type="text/javascript" src="/resources/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/resources/js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="/resources/js/common.js"></script>
+    <script type="text/javascript" src="/resources/js/own/common.js"></script>
     <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/resources/js/ion.rangeSlider.min.js"></script>
+    <script type="text/javascript" src="/resources/js/own/ajax.js"></script>
+    <script type="text/javascript" src="/resources/js/simpleCart.min.js"></script>
+    <#--<script type="text/javascript" src="/resources/js/libs.js" ></script>-->
     <#list scripts as js>
         <script src="/resources/${js}" type="text/javascript" defer></script>
     </#list>

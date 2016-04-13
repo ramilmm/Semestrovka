@@ -3,6 +3,8 @@
  * on 01.03.2016.
  */
 $(document).ready(function () {
+    
+    
 
     $(document).on('click', '#showMore', function () {
         var $this = $(this);
@@ -84,5 +86,5 @@ $(document).ready(function () {
             }
         });
     });
-
+    
 });

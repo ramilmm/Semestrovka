@@ -11,16 +11,16 @@
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
 
     <!-- Определяем папку, в которой будем искать DAO компоненты (@Repository) -->
-    <context:component-scan base-package="mvc.repositories.jpa"/>
+    <!--<context:component-scan base-package="mvc.repositories"/>-->
 
     <!-- Определяем папку, в которой будем искать классы отнаследованные от JpaRepository -->
     <jpa:repositories base-package="mvc.repositories"/>
 
     <!-- Настраивает управление транзакциями с помощью аннотации @Transactional -->
-    <tx:annotation-driven transaction-manager="jpaTransactionManager"/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!-- Менеджер транзакций -->
-    <bean id="jpaTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
           p:entityManagerFactory-ref="entityManagerFactory"/>
 
     <bean id="hibernatePersistenceProvider" class="org.hibernate.jpa.HibernatePersistenceProvider"/>
@@ -46,7 +46,7 @@
     <!-- Настройки Entity Manager для JPA -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
           p:dataSource-ref="dataSource"
-          p:packagesToScan="com.springapp.mvc.common"
+          p:packagesToScan="mvc.common"
           p:persistenceProvider-ref="hibernatePersistenceProvider"
           p:jpaVendorAdapter-ref="hibernateJpaVendorAdapter">
         <property name="jpaProperties">

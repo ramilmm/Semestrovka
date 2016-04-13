@@ -74,5 +74,29 @@ function Ascroll() {
     force_edges: true
     });
 
+    simpleCart({
+        cartColumns: [
+            { attr: "image", label: ""},
+            { attr: "name", label: "Наименование"},
+            { view: "decrement" , label: " ↓" , text: "-" },
+            { view:"input", attr: "quantity", label: "Количество"},
+            { view: "increment" , label: " ↑" , text: "+" },
+            { view: "currency", attr: "price", label: "Стоимость"},
+            { view: "remove", text: "X", label: "Удалить позицию"}
+        ],
+        cartStyle: "table",
+    });
+    simpleCart.currency({
+        code: "US" ,
+        symbol: "$" ,
+        name: "Dollars",
+        delimiter: " ",
+        after: true ,
+        accuracy: 0,
+    });
+    $(".clearbasket_link").click(function(){
+        simpleCart.empty();
+    });
+
     
 });

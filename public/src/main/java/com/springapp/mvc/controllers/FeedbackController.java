@@ -27,7 +27,7 @@ public class FeedbackController {
      */
     @IncludeMenuInfo
     @RequestMapping(method = RequestMethod.GET)
-    public String renderRegistrationPage() {
+    public String renderFeedbackPage() {
         request.setAttribute(ATTR_FEEDBACK_FORM, new FeedbackFormBean());
         return "feedback/feedbackPage";
     }

@@ -1,46 +1,18 @@
+<#-- @ftlvariable name="Menu" type="java.util.List<mvc.common.CategoryInfo>" -->
+
 <div class="footer_category">
     <div class="container">
         <div class="row">
+            <#list Menu as menu>
             <div class="col-md-3">
-                <h4>Biography & True Stories</h4>
+                <h4>${menu.name}</h4>
                 <ul>
-                    <li><a href="#">Diares, Letters & Journals</a></li>
-                    <li><a href="#">True Stories</a></li>
-                    <li><a href="#">Generic Exams</a></li>
-                    <li><a href="#">Sociology</a></li>
-                    <li><a href="#">Memoirs</a></li>
+                <#list menu.children as child>
+                    <li><a href="/catalog/${child.id}" data-id="${child.id}">${child.name}</a></li>
+                </#list>
                 </ul>
             </div>
-            <div class="col-md-3">
-                <h4>Professional & Reference</h4>
-                <ul>
-                    <li><a href="#">Academic and Reference</a></li>
-                    <li><a href="#">Business Trade</a></li>
-                    <li><a href="#">Engineering and Computer Science</a></li>
-                    <li><a href="#">Introduction to Computers</a></li>
-                    <li><a href="#">Science and Maths</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h4>Earth Sciences</h4>
-                <ul>
-                    <li><a href="#">Geography</a></li>
-                    <li><a href="#">Regional & Area Planning</a></li>
-                    <li><a href="#">Biology</a></li>
-                    <li><a href="#">Something else</a></li>
-                    <li><a href="#">Something else</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h4>Mathematics</h4>
-                <ul>
-                    <li><a href="#">Algebra</a></li>
-                    <li><a href="#">Differential Equations</a></li>
-                    <li><a href="#">Discrete Mathematics</a></li>
-                    <li><a href="#">Geometry</a></li>
-                    <li><a href="#">Fourier Analysis</a></li>
-                </ul>
-            </div>
+            </#list>
         </div>
     </div>
     <div class="container">

@@ -11,8 +11,8 @@ public class Cart {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "order_id")
-    private OrdersInfo order_id;
+    @JoinColumn(name = "user_id")
+    private UsersInfo user_id;
 
     @OneToOne
     @JoinColumn(name = "good_id")
@@ -24,8 +24,8 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(OrdersInfo order_id, GoodInfo good_id, Long count) {
-        this.order_id = order_id;
+    public Cart(UsersInfo user_id, GoodInfo good_id, Long count) {
+        this.user_id = user_id;
         this.good_id = good_id;
         this.count = count;
     }
@@ -38,12 +38,12 @@ public class Cart {
         this.id = id;
     }
 
-    public OrdersInfo getOrder_id() {
-        return order_id;
+    public UsersInfo getUser_id() {
+        return user_id;
     }
 
-    public void setOrder_id(OrdersInfo order_id) {
-        this.order_id = order_id;
+    public void setUser_id(UsersInfo user_id) {
+        this.user_id = user_id;
     }
 
     public GoodInfo getGood_id() {

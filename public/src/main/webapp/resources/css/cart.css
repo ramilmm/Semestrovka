@@ -1,6 +1,9 @@
 body, header {
     font-family: "RobotoCondensedRegular";
 }
+body {
+    height: 100%;
+}
 .top_line {
     background-color: #424242;
     height: 27px;
@@ -381,4 +384,51 @@ input[type="checkbox"] + label::before {
 }
 input[type="checkbox"]:checked + label::before {
     background-position: 0 -22px;
+}
+
+span#total {
+    font-weight: 700;
+    font-size: 23px;
+}
+#header_items {
+    font-size: 15px;
+    margin-left: -11px;
+}
+a.clearbasket_link {
+    font-size: 11px;
+    color: black;
+}
+a.clearbasket_link:hover {
+    color: black;
+    text-decoration: none;
+}
+a.buy_btn {
+    font-size: 19px;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background-color: #f05356;
+}
+span.item_price {
+    border: 3px solid #f05356;
+    font-size: 19px;
+    margin-left: -5px;
+}
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+header {
+    flex: 0 0 auto;
+}
+.main {
+    flex: 1 0 auto;
+}
+footer {
+    flex: 0 0 auto;
 }
